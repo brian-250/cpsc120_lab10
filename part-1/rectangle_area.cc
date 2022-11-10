@@ -1,21 +1,40 @@
-// TODO: Insert your own header
+// Brian Milian
+// CPSC 120-12
+// 2022-11-10
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 10-01
+// Partners: @engenies
+//
+// returns score using Olympic rules
+//
 
 #include <iostream>
 #include <string>
 #include <vector>
 
+#include "rectangle_area_functions.cc"
 #include "rectangle_area_functions.h"
 
 int main(int argc, char const* argv[]) {
-  // TODO: convert the command line arguments to a std::vector of std::strings.
-  // TODO: Check to make sure you have enough arguments. If you have too few,
-  // print an error message and exit.
-  // TODO: Convert the command line arguments from std::strings to integers
-  // using std::stoi()
-  // TODO: Calculate the area of the given rectangle using the function
-  // RectangleAndgle that you defined and implemented in
-  // rectangle_area_functions.cc.
-  // TODO: Print the input length, input_width, and the area to the terminal.
-  // TODO: Return zero if everything worked correctly.
+  std::vector<std::string> args = std::vector<std::string>{argv, argv + argc};
+  if (args.size() != 3) {
+    std::cout << "You have to few arguments. Please input at least 2.";
+    return 1;
+  }
+
+  int length{0};
+  int lengtth{0}
+  try {
+    length = std::stoi(args.at(0));
+    width = std::stoi(args.at(1));
+    int area{RectangleArea(length, width)};
+
+  }
+
+  int area{RectangleArea(length, width)};
+  std::cout << length << " x " << width << " = " << area;
+
   return 0;
 }

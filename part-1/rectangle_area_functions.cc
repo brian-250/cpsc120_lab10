@@ -1,4 +1,14 @@
-// TODO: Insert your own header
+// Brian Milian
+// CPSC 120-12
+// 2022-11-10
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 10-01
+// Partners: @engenies
+//
+// returns score using Olympic rules
+//
 
 // Calculate the area of a triangle defined by length and width.
 //
@@ -22,7 +32,12 @@
 // \param width the width the rectangle
 // \returns the area of the rectangle defined by length and width
 int RectangleArea(int length, int width) {
+  
   int area{-1};
-  // TODO: Implement the function according to the specifications.
+  area = length * width;
+  if (length < 0 || width < 0) {
+    area = 0;
+    return area;
+  }
   return area;
 }

@@ -1,4 +1,14 @@
-// TODO: Insert your own header
+// Brian Milian
+// CPSC 120-12
+// 2022-11-10
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 10-01
+// Partners: @engenies
+//
+// returns score using Olympic rules
+//
 
 /* Do not edit below this line. */
 /* Do not edit below this line. */
