@@ -25,16 +25,15 @@ int main(int argc, char const* argv[]) {
   }
 
   int length{0};
-  int lengtth{0}
+  int width{0};
+  int area{0};
   try {
     length = std::stoi(args.at(0));
     width = std::stoi(args.at(1));
-    int area{RectangleArea(length, width)};
-
+    area = RectangleArea(length, width);
+  } catch (std::exception const& e) {
+    std::cout << "Please input a number.";
   }
-
-  int area{RectangleArea(length, width)};
   std::cout << length << " x " << width << " = " << area;
-
   return 0;
 }
