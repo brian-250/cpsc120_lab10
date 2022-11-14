@@ -14,7 +14,6 @@
 #include <string>
 #include <vector>
 
-#include "rectangle_area_functions.cc"
 #include "rectangle_area_functions.h"
 
 int main(int argc, char const* argv[]) {
