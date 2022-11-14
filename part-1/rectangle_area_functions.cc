@@ -7,6 +7,10 @@
 // Lab 10-01
 // Partners: @engenies
 //
+// function RectangleArea() multiplies the length by the width of a rectangle to
+// find it's area
+//
+
 #include <iostream>
 
 int RectangleArea(int length, int width) {

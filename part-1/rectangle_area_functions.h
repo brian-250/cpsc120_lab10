@@ -7,7 +7,7 @@
 // Lab 10-01
 // Partners: @engenies
 //
-// returns score using Olympic rules
+// promises main funtion that function RectangleArea() will be created
 //
 
 /* Do not edit below this line. */
