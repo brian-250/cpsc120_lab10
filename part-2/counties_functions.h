@@ -1,4 +1,15 @@
-// TODO: Insert your own header
+// Brian Milian
+// CPSC 120-12
+// 2022-11-10
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 10-02
+// Partners: @engenies
+//
+// this file is a promise to the main function that there is going to be a
+// counties_functions.cc file
+//
 
 /* Do not edit below this line. */
 /* Do not edit below this line. */

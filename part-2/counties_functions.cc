@@ -1,22 +1,41 @@
-// TODO: Insert your own header
+// Brian Milian
+// CPSC 120-12
+// 2022-11-10
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 10-02
+// Partners: @engenies
+//
+// function AllCountiesString returns all the counties names, function
+// CountyIndex returns the inputted county's index
+//
 
 #include "counties_functions.h"
 
 std::string AllCountiesString(
     const std::vector<std::vector<std::string>>& ca_counties) {
   std::string all_counties_string;
-  // TODO: Implement the function
-  // Write a loop which takes the name of each county from the vector
-  // ca_counties and adds it to all_counties_string along with a space.
+  all_counties_string = ca_counties.at(0).at(0);
+  int element{1};
+  for (int index = 0; index < ca_counties.at(0).size(); index++) {
+    all_counties_string += (" " + ca_counties.at(0).at(element));
+    element++;
+  }
   return all_counties_string;
 }
 
 int CountyIndex(const std::vector<std::vector<std::string>>& ca_counties,
                 const std::string& match_county) {
   int index{-1};
-  // TODO: Implement the function
-  // Write a loop which goes through the ca_counties vector looking
-  // for a match with the string match_county. When it finds a match,
-  // return the index of the match. If it is not found, return -1.
+  int counter{0};
+  for (int column = 0; column < ca_counties.size(); column++) {
+    for (int row = 0; row < ca_counties.at(0).size(); row++) {
+      if (ca_counties.at(0).at(counter) == match_county) {
+        index = std::stoi(ca_counties.at(1).at(counter));
+      }
+      counter++;
+    }
+  }
   return index;
 }
