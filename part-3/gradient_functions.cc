@@ -1,4 +1,14 @@
-// TODO: Insert your own header
+// Brian Milian
+// CPSC 120-12
+// 2022-11-22
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 10-03
+// Partners: @engenies
+//
+// function returns true if a file has the same extension as the one asked for
+//
 
 #include "gradient_functions.h"
 
@@ -28,5 +38,5 @@ bool HasMatchingFileExtension(const std::string& file_name,
   // is true. This means you will want to use the 'equal to' operator
   // '==' to check to see if file_name.compare() returned 0.
   // ex. file_name.compare() == 0
-  return false;
+  return ((file_name.size() >= extension.size()) && (file_name.compare(file_name.size() - extension.size(), extension.size(), extension) == 0));
 }

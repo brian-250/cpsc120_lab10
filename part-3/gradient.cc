@@ -1,4 +1,14 @@
-// TODO: Insert your own header
+// Brian Milian
+// CPSC 120-12
+// 2022-11-22
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 10-03
+// Partners: @engenies
+//
+// returns the population size of a county in California
+//
 
 #include <Magick++.h>
 
@@ -23,24 +33,39 @@ int main(int argc, char* argv[]) {
 
   // TODO: convert the command line arguments to a
   // std::vector of std::strings.
+  std::vector<std::string> args = std::vector<std::string>{argv, argv + argc};
   // TODO: Check to make sure you have enough arguments. If you have
   // too few, print an error message and exit.
+  if (args.size() != 2) {
+    std::cout << "Please provide a path to a file.\n";
+    return 1;
+  }
   // TODO: Declare a std::string variable named output_file_name.
   // TODO: Assign the first argument to output_file_name
+  std::string output_file_name{args.at(1)};
   // TODO: Declare a std::string variable named image_format and
   // initialize it to ".png"
+  std::string image_format{".png"};
   // TODO: Using HasMatchingFileExtension(), check to see if
   // output_file_name has the extension defined as image_format. If
   // output_file_name does not, then print an error message and return 1.
+  if (!(HasMatchingFileExtension(output_file_name, image_format))) {
+    std::cout << output_file_name << " is missing the required file extension " << image_format << ".\n";
+    return 1;
+  }
   // TODO: Declare a Magick::ColorRGB variable named white and set it's
   // color to white which means setting each color channel to 1.
   // For example:
   // Magick::ColorRGB white(1, 1, 1);
+  Magick::ColorRGB white(1, 1, 1);
   // TODO: Declare a Magick::Image variable named image. Initialize the
   // variable to be kImageWidth pixels wide and kImageHeight pixels tall
   // and set the entire image to white. For example:
   // Magick::Image image(Magick::Geometry(kImageWidth, kImageHeight), white);
-
+  
+  // image code went below, before
+  Magick::Image image(Magick::Geometry(kImageWidth, kImageHeight), white);
+  
   // TODO: Define two for loops that are nested.
   // The outer loop counts through the columns starting from the
   // last column and counts down to the first column. Let's call the
@@ -48,11 +73,13 @@ int main(int argc, char* argv[]) {
   // to (image.columns() - 1) and we would subtract one (column--) for
   // each iteration of the loop until 'column' reaches the first
   // column (column >= 0).
+
   // The inner loop counts through the rows starting from the first row
   // and counts up to the last row. Let's call the counter for the inner
   // loop 'row'. We would initialize 'row' to 0 and we would add
   // one (row++) for each iteration of the loop until 'row' reaches the
   // last row (row < image.rows()).
+
   // TODO: In the body of the loop, calculate the new color for the
   // pixel located at ('row', 'column'). To calculate the color for the
   // pixel we will declare three doubles red, green, and blue and
@@ -60,11 +87,13 @@ int main(int argc, char* argv[]) {
   // For red, declare a double type variable with the name red.
   // Assign to red the ratio between the current 'row' and how many
   // columns the image has (image.columns() - 1).
+  
   // For green, declare a double type variable with the name green.
   // Assign to green the ratio between the current 'column' and
   // how many rows the image has (image.rows() - 1).
   // For blue, declare a double type variable with the name blue.
   // Assign to blue the value 0.25.
+
   // TODO: Declare a Magick:ColorRGB type variable named color. This
   // will be the new color for the current pixel. Initialize color
   // with the red, green, and blue value that was just calculated.
@@ -74,6 +103,15 @@ int main(int argc, char* argv[]) {
   // For example:
   // image.pixelColor(row, column, color);
   // This is the last step in the loop.
+  for (int column = (image.columns() - 1); column < -1; column--) {
+    for (int row = 0; row < image.rows(); row++) {
+      double red = row/(image.columns() - 1);
+      double green = column/(image.rows() - 1);
+      double blue = 0.25;
+      Magick::ColorRGB color(red, green, blue);
+      image.pixelColor(row, column, color);
+    }
+  }
 
   // TODO: After the loop completes, write the image variable to a file.
   // Use the write() member function and name the output file
@@ -81,5 +119,6 @@ int main(int argc, char* argv[]) {
   // For example:
   // image.write(output_file_name);
 
+  image.write(output_file_name);
   return 0;
 }
