@@ -7,7 +7,8 @@
 // Lab 10-03
 // Partners: @engenies
 //
-// returns the population size of a county in California
+// This file is a promise to the main function that the file
+// 'gradient_functions.cc' will exist
 //
 
 /* Do not edit below this line. */
