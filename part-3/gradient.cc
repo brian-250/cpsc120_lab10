@@ -7,7 +7,7 @@
 // Lab 10-03
 // Partners: @engenies
 //
-// returns the population size of a county in California
+// creates a file that outputs a colored canvas of red, green, blue, and yellow
 //
 
 #include <Magick++.h>
