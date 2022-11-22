@@ -13,6 +13,10 @@
 
 #include "counties_functions.h"
 
+#include <iostream>
+#include <string>
+#include <vector>
+
 std::string AllCountiesString(
     const std::vector<std::vector<std::string>>& ca_counties) {
   std::string all_counties_string;

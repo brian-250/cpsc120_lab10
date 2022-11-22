@@ -46,7 +46,7 @@ int main(int argc, char const *argv[]) {
 
   std::string list{AllCountiesString(ca_counties)};
   std::vector<std::string> args = std::vector<std::string>{argv, argv + argc};
-  if (args.size() == 1) {
+  if ((args.size() < 2) || (args.size() > 2)) {
     std::cout << "Please specify a county name on the command line. Exiting.\n";
     std::cout << "For example: ./counties 'Los Angeles'\n";
     std::cout << "The counties in California are: " << list << "\n";
