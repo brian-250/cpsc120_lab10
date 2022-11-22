@@ -64,7 +64,8 @@ int main(int argc, char const *argv[]) {
     std::cout << ca_counties.at(0).at(county_index) << "population is "
               << ca_counties.at(1).at(county_index) << "\n";
   } else {
-    std::cout << match_county << " is not in the vector. Please check your spelling.\n";
+    std::cout << match_county
+              << " is not in the vector. Please check your spelling.\n";
     std::cout << "The counties in California are: " << list << "\n";
     return 1;
   }
