@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
   // TODO: Using HasMatchingFileExtension(), check to see if
   // output_file_name has the extension defined as image_format. If
   // output_file_name does not, then print an error message and return 1.
-  if (!(HasMatchingFileExtension(output_file_name, image_format))) {
+  if (!HasMatchingFileExtension(output_file_name, image_format)) {
     std::cout << output_file_name << " is missing the required file extension " << image_format << ".\n";
     return 1;
   }
