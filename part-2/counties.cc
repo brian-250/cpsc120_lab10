@@ -52,12 +52,6 @@ int main(int argc, char const *argv[]) {
     std::cout << "The counties in California are: " << list << "\n";
   }
 
-  if (args.size() != 2) {
-    std::cout << "Please only input one county\n";
-    std::cout << "Choose from this list: " << list << "\n";
-    return 1;
-  }
-
   std::string match_county{args.at(1)};
   int county_index{CountyIndex(ca_counties, match_county)};
   if (county_index != -1) {
