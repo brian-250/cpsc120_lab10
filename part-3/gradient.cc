@@ -105,8 +105,8 @@ int main(int argc, char* argv[]) {
   // This is the last step in the loop.
   for (int column = (image.columns() - 1); column > -1; column--) {
     for (int row = 0; row < image.rows(); row++) {
-      double red = row/(image.columns() - 1);
-      double green = column/(image.rows() - 1);
+      double red = double(row)/double(image.columns() - 1);
+      double green = double(column)/double(image.rows() - 1);
       double blue = 0.25;
       Magick::ColorRGB color(red, green, blue);
       image.pixelColor(row, column, color);
