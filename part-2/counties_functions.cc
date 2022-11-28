@@ -32,13 +32,9 @@ std::string AllCountiesString(
 int CountyIndex(const std::vector<std::vector<std::string>>& ca_counties,
                 const std::string& match_county) {
   int index{-1};
-  int counter{0};
-  for (int column = 0; column < ca_counties.size(); column++) {
-    for (int row = 0; row < ca_counties.at(0).size(); row++) {
-      if (ca_counties.at(0).at(counter) == match_county) {
-        index = std::stoi(ca_counties.at(1).at(counter));
-      }
-      counter++;
+  for (int column = 0; column < ca_counties.at(0).size(); column++) {
+    if (ca_counties.at(0).at(column) == match_county) {
+      index = column;
     }
   }
   return index;

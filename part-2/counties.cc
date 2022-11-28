@@ -44,23 +44,24 @@ int main(int argc, char const *argv[]) {
         "485887",  "552999", "99063",   "65498",   "16060",  "477054",
         "55810",   "839784", "216986",  "83421"}}};
 
-  std::string list{AllCountiesString(ca_counties)};
   std::vector<std::string> args = std::vector<std::string>{argv, argv + argc};
   if ((args.size() < 2) || (args.size() > 2)) {
     std::cout << "Please specify a county name on the command line. Exiting.\n";
     std::cout << "For example: ./counties 'Los Angeles'\n";
-    std::cout << "The counties in California are: " << list << "\n";
+    std::cout << "The counties in California are: "
+              << AllCountiesString(ca_counties) << "\n";
   }
 
   std::string match_county{args.at(1)};
   int county_index{CountyIndex(ca_counties, match_county)};
   if (county_index != -1) {
-    std::cout << ca_counties.at(0).at(county_index) << "population is "
-              << ca_counties.at(1).at(county_index) << "\n";
+    std::cout << "The population of " << ca_counties.at(0).at(county_index)
+              << " is " << ca_counties.at(1).at(county_index) << "\n";
   } else {
     std::cout << match_county
               << " is not in the vector. Please check your spelling.\n";
-    std::cout << "The counties in California are: " << list << "\n";
+    std::cout << "The counties in California are: "
+              << AllCountiesString(ca_counties) << "\n";
     return 1;
   }
   return 0;
