@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
   Magick::InitializeMagick(*argv);
 
   std::vector<std::string> args = std::vector<std::string>{argv, argv + argc};
-  if (args.size() != 2) {
+  if (args.size() < 2) {
     std::cout << "Please provide a path to a file.\n";
     return 1;
   }
