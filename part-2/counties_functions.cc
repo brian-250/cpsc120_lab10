@@ -35,6 +35,7 @@ int CountyIndex(const std::vector<std::vector<std::string>>& ca_counties,
   for (int column = 0; column < ca_counties.at(0).size(); column++) {
     if (ca_counties.at(0).at(column) == match_county) {
       index = column;
+      break;
     }
   }
   return index;
